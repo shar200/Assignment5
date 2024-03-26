@@ -25,14 +25,14 @@ public class Department {
         Department department = new Department(1, "Saritha");
 
         // JDBC URL, username, and password of MySQL server
-        String url = "jdbc:mysql://localhost:3306/?user=root";
+        String url = "jdbc:mysql://localhost:3306/departments";
         String user = "root";
         String password = "abhinaya";
 
         // SQL query to insert data into department table
         String sql = "INSERT INTO department (id, name) VALUES (" + department.getId() + ", '" + department.getName() + "')";
 
-        try (Connection conn = DriverManager.getConnection(url, user, password);
+        try (Connection conn = DriverManager.getConnection(url,user,password);
              Statement stmt = conn.createStatement()) {
             // Execute the SQL statement
             stmt.executeUpdate(sql);
